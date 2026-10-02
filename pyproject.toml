@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grand-prix"
+version = "0.1.0"
+description = "Behavioral cloning of a Pure Pursuit + Stanley expert controller for a Box2D race car, with an experimental PPO extension."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cvxpy>=1.7.3",
+    "gymnasium[box2d]>=1.2.2",
+    "numpy>=2.3.4",
+    "torch>=2.9.0",
+]
+
+[project.scripts]
+grand_prix = "grand_prix.__main__:main"
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
